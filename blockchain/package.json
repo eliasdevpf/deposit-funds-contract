@@ -1,0 +1,30 @@
+{
+	"name": "blockchain",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"lint": "solhint 'contracts/**/*.sol' && eslint . && prettier --check --ignore-path ./.eslintignore '**'",
+		"test": "npx hardhat test"
+	},
+	"dependencies": {
+		"@openzeppelin/contracts": "^4.2.0",
+		"dotenv": "^10.0.0",
+		"hardhat-watcher": "^2.1.1"
+	},
+	"devDependencies": {
+		"@nomiclabs/hardhat-ethers": "^2.0.2",
+		"@nomiclabs/hardhat-waffle": "^2.0.1",
+		"chai": "^4.3.4",
+		"eslint": "^7.31.0",
+		"eslint-config-prettier": "^8.3.0",
+		"ethereum-waffle": "^3.3.0",
+		"ethers": "^5.4.1",
+		"hardhat": "^2.4.3",
+		"prettier": "2.3.1",
+		"prettier-plugin-solidity": "^1.0.0-beta.16",
+		"solhint": "^3.3.6",
+		"solhint-plugin-prettier": "^0.0.5",
+		"solidity-coverage": "^0.7.16"
+	}
+}

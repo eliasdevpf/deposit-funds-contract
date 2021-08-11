@@ -8,6 +8,7 @@ function App2() {
   const [signerData, setSignerData] = useState();
 
   const getData = useCallback(async () => {
+    //Get initial data ( signer, signerAddress, signerBalance)
     const { contract, signer } = await getInitialData();
     console.log(signer);
     setSignerData({ ...signer });
@@ -15,12 +16,13 @@ function App2() {
   }, []);
 
   async function handleDepositFunds() {
+    //utils . parseUnits ( valueString , decimalsOrUnitName )   =>   BigNumber
     const bet = ethers.utils.parseUnits('1.5', 18);
     await contract.deposit(bet, {
       value: bet,
     });
   }
-
+  console.log(contract);
   async function handleReadDeposits() {
     try {
       await contract.getViewBalance();

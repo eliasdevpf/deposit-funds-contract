@@ -55,7 +55,7 @@ function App2() {
             fontSize: '18px',
             padding: '1rem',
             cursor: 'pointer',
-            margin: '1rem',
+            margin: '2rem',
           }}
         >
           Deposit funds

@@ -9,8 +9,8 @@ contract Game {
     address private owner;
     uint256 private treasury;
 
-    event depositEvent(address degenerate, uint256 bet);
-    event withdrawFundsEvent(address contractOwner, uint256 balance);
+    event depositEvent(address indexed degenerate, uint256 bet);
+    event withdrawFundsEvent(address indexed contractOwner, uint256 balance);
 
     mapping(address => Player) public players;
 

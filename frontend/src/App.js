@@ -1,28 +1,25 @@
 import { ethers } from 'ethers';
 import { useCallback, useEffect, useState } from 'react';
 import './App.css';
-import { getInitialData } from './helpers';
+import { getInitialData, getPastEvents } from './helpers';
 
 function App2() {
   const [contract, setContract] = useState();
   const [signerData, setSignerData] = useState();
 
   const getData = useCallback(async () => {
-    //Get initial data ( signer, signerAddress, signerBalance)
     const { contract, signer } = await getInitialData();
-    console.log(signer);
     setSignerData({ ...signer });
     setContract(contract);
   }, []);
 
   async function handleDepositFunds() {
-    //utils . parseUnits ( valueString , decimalsOrUnitName )   =>   BigNumber
     const bet = ethers.utils.parseUnits('1.5', 18);
     await contract.deposit(bet, {
       value: bet,
     });
   }
-  console.log(contract);
+
   async function handleReadDeposits() {
     try {
       await contract.getViewBalance();
@@ -31,9 +28,13 @@ function App2() {
     }
   }
 
+  function handleGetLogs() {
+    getPastEvents(contract);
+  }
+
   useEffect(() => {
     getData();
-  }, [getData]);
+  }, []);
 
   return (
     <div>
@@ -71,6 +72,19 @@ function App2() {
           onClick={handleReadDeposits}
         >
           Read deposited funds
+        </button>
+        <button
+          style={{
+            background: 'IndianRed',
+            border: 'none',
+            fontSize: '18px',
+            padding: '1rem',
+            cursor: 'pointer',
+            margin: '1rem',
+          }}
+          onClick={handleGetLogs}
+        >
+          Get Logs & Events
         </button>
       </div>
     </div>

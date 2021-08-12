@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/eliasbarbero/Desktop/deposit-funds-contract/blockchain/contracts/game.sol": {
-      "lastModificationDate": 1628691638047,
-      "contentHash": "1df7d7e58a395bef0a44358dc47a921d",
+      "lastModificationDate": 1628753817880,
+      "contentHash": "826adbb7b279605a706082470c0313af",
       "sourceName": "contracts/game.sol",
       "solcConfig": {
         "version": "0.8.6",
@@ -33,6 +33,40 @@
       ],
       "artifacts": [
         "Game"
+      ]
+    },
+    "/Users/eliasbarbero/Desktop/deposit-funds-contract/blockchain/contracts/newgame.sol": {
+      "lastModificationDate": 1628753709778,
+      "contentHash": "d1e49bd5d5e7c552f7882acf18c9f7a7",
+      "sourceName": "contracts/newgame.sol",
+      "solcConfig": {
+        "version": "0.8.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.6"
+      ],
+      "artifacts": [
+        "Blackhole"
       ]
     }
   }

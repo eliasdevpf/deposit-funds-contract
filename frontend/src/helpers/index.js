@@ -47,14 +47,14 @@ export async function getPastEvents(contract) {
   const _provider = getProvider();
   const signer = await _provider.getSigner();
   const signerAddress = await signer.getAddress();
-  // const iface = new ethers.utils.Interface(GameContractABI)
   const filter = await contract.filters.depositEvent(signerAddress);
   const logs = await contract.queryFilter(filter);
   const filteredLogs = await _provider.getLogs(filter);
   console.log({ signerAddress, logs, filteredLogs });
+
+  // const iface = new ethers.utils.Interface(GameContractABI)
   // const decodedEvents = logs?.map((log) => {
-  // 	return iface.decodeEventLog('depositEvent', log.data)
-  // })
+  // return iface.decodeEventLog('depositEvent', log.data)})
   // console.log(decodedEvents)
   // const toAddresses = decodedEvents.map((event) => event['values']['to'])
   // const fromAddresses = decodedEvents.map((event) => event['values']['from'])
